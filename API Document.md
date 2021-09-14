@@ -1652,3 +1652,130 @@
 
 ----
 
+### 搜索
+
+**接口功能**
+
+> 搜索
+
+**URL**
+
+> /api/course/search
+
+**请求方式**
+
+> POST
+
+**请求格式**
+
+> JSON
+
+**请求字段**
+
+> | 参数    | 必选  | 类型   | 说明     |
+> | :------ | :---- | :----- | -------- |
+> | content | true  | string | 搜索内容 |
+> | tag_id  | false | int    | 标签id   |
+
+**响应格式**
+
+> JSON
+
+**响应字段**
+
+> | 返回字段 | 字段类型 | 说明                                 |
+> | -------- | -------- | ------------------------------------ |
+> | code     | int      | 状态码                               |
+> | msg      | string   | 状态信息                             |
+> | courses  | list     | 符合条件的课程列表（字段同课程详情） |
+
+**示例**
+
+```json
+// request 
+{
+    "content": "1",
+    "tag_id": 1
+}
+
+// response JSON
+{
+    "code": 20000,
+    "msg": "成功",
+    "data": {
+        "courses": [
+            {
+                "course_id": 2,
+                "title": "1111",
+                "seller_id": 1,
+                "seller_name": "123",
+                "published": true,
+                "tags": [
+                    {
+                        "tag_id": 1,
+                        "tag_name": "前端"
+                    },
+                    {
+                        "tag_id": 2,
+                        "tag_name": "后端"
+                    }
+                ],
+                "deleted": false,
+                "sales": 0,
+                "snapshot_id": 3,
+                "content": "0000",
+                "cover": "/media/20210903155523MvMZdsY824.jpg",
+                "price": "10.10",
+                "create_time": "2021-09-13 15:34:28"
+            },
+            {
+                "course_id": 3,
+                "title": "1111",
+                "seller_id": 1,
+                "seller_name": "123",
+                "published": true,
+                "tags": [
+                    {
+                        "tag_id": 1,
+                        "tag_name": "前端"
+                    },
+                    {
+                        "tag_id": 2,
+                        "tag_name": "后端"
+                    }
+                ],
+                "deleted": false,
+                "sales": 0,
+                "snapshot_id": 5,
+                "content": "0000",
+                "cover": "/media/20210903155523MvMZdsY824.jpg",
+                "price": "1000.0",
+                "create_time": "2021-09-13 15:39:41"
+            },
+            {
+                "course_id": 5,
+                "title": "1111",
+                "seller_id": 1,
+                "seller_name": "123",
+                "published": true,
+                "tags": [
+                    {
+                        "tag_id": 1,
+                        "tag_name": "前端"
+                    }
+                ],
+                "deleted": false,
+                "sales": 0,
+                "snapshot_id": 7,
+                "content": "0000",
+                "cover": "/media/20210903155523MvMZdsY824.jpg",
+                "price": "10.10",
+                "create_time": "2021-09-14 11:03:54"
+            }
+        ]
+    }
+}
+```
+
+----
+
